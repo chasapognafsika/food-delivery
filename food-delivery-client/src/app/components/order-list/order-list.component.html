@@ -1,0 +1,25 @@
+<div class="row">
+  <div class="small-12 medium-8 columns">
+    <h3>Below you can check your orders</h3>
+    <ul class="orders-list">
+      <li *ngFor="let order of orders | async" class="order-container" style="list-style: none;">
+        <div class="row">
+          <ul class="items-list">
+            <li *ngFor="let item of order.items" class="item-container" style="list-style: none;">
+              <div class="medium-9 columns">
+                <h4>   
+                  <p class="text--red text--bold js-product-product-title">Product: {{item.productTitle}}</p>
+                  <p class="text--red text--bold js-product-quantity">Quantity: {{item.quantity}}</p>
+              </h4>
+              </div>
+              <br>
+            </li>
+          </ul> 
+          <h4>   
+            <span class="text--red text--bold js-gross-total">Order Total : {{order.grossTotal}} {{order.currency}}</span> 
+          </h4>
+        </div> 
+      </li>
+    </ul>
+  </div>
+</div>
