@@ -90,6 +90,7 @@ export class CheckoutComponent implements OnInit, OnDestroy {
 
   public purchaseCartItem(newOrder: Observable<ShoppingCart>) : void {
       newOrder.subscribe((order) => this.orderToCreate = order);
+      this.orderService.createOrder(this.orderToCreate).subscribe();
   } 
 
 }
